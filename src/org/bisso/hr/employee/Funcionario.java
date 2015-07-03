@@ -1,5 +1,7 @@
 package org.bisso.hr.employee;
 
+import java.util.jar.Attributes.Name;
+
 public class Funcionario {
 
 	private long chapa;
@@ -77,8 +79,8 @@ public class Funcionario {
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
+//		if (getClass() != obj.getClass())
+//			return false;
 		Funcionario other = (Funcionario) obj;
 		if (cargo == null) {
 			if (other.cargo != null)
@@ -98,6 +100,13 @@ public class Funcionario {
 		if (sexo != other.sexo)
 			return false;
 		return true;
+	}
+	
+	@Override
+	public String toString() {
+		return "Funcionario [ " + chapa 
+				+ " / Cargo : " + cargo 
+				+ " , Name " + nome + " Salario : " + salario + " ] ";
 	}
 	
 	

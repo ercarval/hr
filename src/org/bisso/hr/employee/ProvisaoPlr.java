@@ -13,21 +13,7 @@ public class ProvisaoPlr {
 		plrTotal += funcionario.getPlr();
 	}
 
-	public void somaPlr(Gerente gerente) {
-		plrTotal += gerente.getPlr();
-	}
-
-	public void somaPlr(Diretor diretor) {
-		plrTotal += diretor.getPlr();
-	}
-
-	public void somaPlr(Engenheiro diretor) {
-		plrTotal += diretor.getPlr();
-	}
-
 	public double getPlrTotal() {
 		return plrTotal;
 	}
-
-
 }
