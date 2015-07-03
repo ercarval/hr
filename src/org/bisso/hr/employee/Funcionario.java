@@ -57,4 +57,74 @@ public class Funcionario {
 		return salario * 2 + 3000;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((cargo == null) ? 0 : cargo.hashCode());
+		result = prime * result + (int) (chapa ^ (chapa >>> 32));
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(salario);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + sexo;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Funcionario other = (Funcionario) obj;
+		if (cargo == null) {
+			if (other.cargo != null)
+				return false;
+		} else if (!cargo.equals(other.cargo))
+			return false;
+		if (chapa != other.chapa)
+			return false;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
+		if (Double.doubleToLongBits(salario) != Double
+				.doubleToLongBits(other.salario))
+			return false;
+		if (sexo != other.sexo)
+			return false;
+		return true;
+	}
+	
+	
+//	@Override
+//	public boolean equals(Object obj) {
+//		
+//		//Eh a mesma instancia
+//		if (this == obj) return true;
+//		
+//		//Nao eh a mesma instanca blz
+//		
+//		if ( obj == null ) return false;
+//		
+//		//N Eh null 
+//		if ( ! (obj instanceof Funcionario) ) return false;
+//		
+//		Funcionario outro = (Funcionario) obj;
+//		
+//		if ( this.chapa == 0 && outro.getChapa() != 0 ) return false;
+//		
+//		
+//		//outro.
+//		
+//		return true;
+//	}
+//	
+	
+	
+	
 }
