@@ -1,8 +1,7 @@
 package org.bisso.hr.employee;
 
-import java.util.jar.Attributes.Name;
 
-public class Funcionario {
+public abstract class Funcionario {
 
 	private long chapa;
 
@@ -55,9 +54,7 @@ public class Funcionario {
 		this.cargo = cargo;
 	}
 
-	public double getPlr() {
-		return salario * 2 + 3000;
-	}
+	public abstract double getPlr() ;
 
 	@Override
 	public int hashCode() {
